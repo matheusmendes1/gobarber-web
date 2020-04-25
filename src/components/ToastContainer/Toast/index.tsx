@@ -19,6 +19,7 @@ interface ToastMessage {
 
 interface ToastProps {
   message: ToastMessage;
+  style: object;
 }
 
 const icons = {
@@ -27,7 +28,7 @@ const icons = {
   success: <FiCheckCircle size={24} />,
 };
 
-const Toast: React.FC<ToastProps> = ({ message }) => {
+const Toast: React.FC<ToastProps> = ({ message, style }) => {
   const { removeToast } = useToast();
 
   useEffect(() => {
@@ -41,7 +42,11 @@ const Toast: React.FC<ToastProps> = ({ message }) => {
   }, [removeToast, message.id]);
 
   return (
-    <Container hasDescription={!!message.description} type={message.type}>
+    <Container
+      hasDescription={!!message.description}
+      type={message.type}
+      style={style}
+    >
       {icons[message.type || 'info']}
 
       <div>
