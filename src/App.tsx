@@ -6,13 +6,13 @@ import SignIn from './pages/SignIn';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import SignUp from './pages/SignUp';
 
-import { AuthProvider } from './hooks/AuthContext';
+import AppProvider from './hooks';
 
 const App: React.FC = () => (
   <>
-    <AuthProvider>
+    <AppProvider>
       <SignIn />
-    </AuthProvider>
+    </AppProvider>
 
     <GlobalStyle />
   </>
