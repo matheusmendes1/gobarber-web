@@ -76,13 +76,10 @@ const Profile: React.FC = () => {
         const formData = {
           name,
           email,
-          ...// eslint-disable-next-line @typescript-eslint/camelcase
-          (old_password
+          ...(old_password
             ? {
-                // eslint-disable-next-line @typescript-eslint/camelcase
                 old_password,
                 password,
-                // eslint-disable-next-line @typescript-eslint/camelcase
                 password_confirmation,
               }
             : {}),
